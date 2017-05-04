@@ -1,0 +1,37 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Variables ***
+${URL}            https://www.tokopedia.com/contact-us#step7
+${BROWSER}        ff
+${DETAIL MASALAH}    Automated Testing menggunakan Robot Framework
+${DETAIL MASALAH LOCATOR}    id=ticket_reply_msg
+${NAMA}           Kemas Muhammad Rouf
+${NAMA LOCATOR}    id=full_name
+${EMAIL}          kemasmuhammadrouf@gmail.com
+${EMAIL LOCATOR}    id=user_email
+${FILE}           ${EMPTY}
+${FILE LOCATOR}    E:\\AutomatedTesting
+${AUTOIT}         E:\\AutomatedTesting\\fileupload.exe
+${AUTOIT LOCATOR}    id=pickfiles-nav1
+
+*** Keywords ***
+Enter Detail Masalah
+    [Arguments]    ${DETAIL MASALAH}
+    Input Text    ${DETAIL MASALAH LOCATOR}    ${DETAIL MASALAH}
+    Input Text    xpath=//*[@id="ticket_reply_msg"]    ${DETAIL MASALAH}
+
+Enter Nama
+    [Arguments]    ${NAMA}
+    Input Text    ${NAMA LOCATOR}    ${NAMA}
+    Input Text    xpath=//*[@id="full_name"]    ${NAMA}
+
+Enter Email
+    [Arguments]    ${EMAIL}
+    Input Text    ${EMAIL LOCATOR}    ${EMAIL}
+    Input Text    xpath=//*[@id="user_email"]    ${EMAIL}
+
+Enter File
+    [Arguments]    ${FILE}
+    Input Text    ${FILE LOCATOR}    ${FILE}
+    Input Text    xpath=//*[@id="pickfiles-nav1l"]    ${FILE}
